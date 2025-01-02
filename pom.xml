@@ -72,12 +72,6 @@
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.jacoco</groupId>
-            <artifactId>jacoco-maven-plugin</artifactId>
-            <version>0.8.7</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -117,17 +111,28 @@
                 </executions>
             </plugin>
 
-            <!-- Plugin de déploiement sur Nexus -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>3.1.0</version> <!-- Mise à jour de la version du plugin -->
+            <!-- Plugin pour configurer la phase de deployement -->
+             <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-deploy-plugin</artifactId>
+              <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>default-deploy</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
+
+
         </plugins>
     </build>
 
     <distributionManagement>
-        <repository>
+         <repository>
             <id>maven-releases</id>
             <url>http://16.171.232.250:8081/repository/maven-releases/</url>
         </repository>
