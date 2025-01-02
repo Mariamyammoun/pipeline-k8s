@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk17
+FROM adoptopenjdk/openjdk:17-jdk
 
 EXPOSE 4000
 
