@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
-
 <head th:fragment="html-head(title)">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
@@ -13,13 +12,11 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}">
 </head>
-
 <body>
     <!-- th:href references static folder directly/// -->
     <div th:fragment="page-header">
-        <img id="system-logo" src="../../static/img/spring-boot-logo.png" th:src="@{/img/spring-boot-logo.png}">
+        <img id="system-logo" src="../../static/img/spring-boot-logo.png" th:src="@{/img/spring-boot-logo.png}" alt="Spring Boot Logo">
         <span class="page-header">Thymeleaf Fragments Example</span>
     </div>
 </body>
-
 </html>
