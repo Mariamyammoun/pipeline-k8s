@@ -1,18 +1,19 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
-<head th:replace="fragments/header.html :: html-head(title='Boardgame Reviews')"></head>
-
+<head th:replace="fragments/header.html :: html-head(title='Boardgame Reviews')">
+    <title>Boardgame Reviews</title>
+</head>
 <body>
     <nav th:replace="fragments/links :: nav.navigation-links"></nav>
     <main class="container">
         <div class="p-4 p-md-5 mb-4 text-center">
             <h1 th:text="|User Reviews for ${boardgame.name}|">Reviews for the boardgame</h1>
-
             <div th:unless="${reviews}">
                 <p class="lead">There is no review for the boardgame.</p>
             </div>
             <div class="my-3">
+                <!-- Added table description -->
+                <p class="sr-only">This table lists user reviews for the boardgame, with options to edit or delete reviews for managers.</p>
                 <table class="table" th:if="${reviews}">
                     <thead class="thead-dark">
                         <tr class="bg-dark text-white">
@@ -60,5 +61,4 @@
     <div th:include="fragments/links :: div.bottom-links"></div>
     <div th:replace="fragments/footer.html :: page-footer"></div>
 </body>
-
 </html>
